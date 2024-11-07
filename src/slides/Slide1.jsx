@@ -9,9 +9,9 @@ const WhatisRedux = () => {
 
   const bulletPoints = [
     "Redux is a state management system commonly used with JavaScript applications.",
+    "Redux is often used with frameworks like React to manage global state effectively.",
     "It provides a single source of truth for the application state.",
     "It makes state interactions predictable through actions and reducers.",
-    "Redux is often used with frameworks like React to manage global state effectively.",
   ];
 
   const handleContinueClick = () => {

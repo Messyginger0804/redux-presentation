@@ -1,12 +1,10 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { revealNextBulletPoint } from '../redux/presentationSlice.js';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import img from '../assets/setting-up-redux.png'; // Example image
 
 const SettingUpRedux = () => {
   console.log("Slide4 component rendered - Setting Up Redux");
   const dispatch = useDispatch();
-  const visiblePoints = useSelector((state) => state.presentation.bulletPointsVisible.slide4);
 
   // Local state to manage the fullscreen image view
   const [isImageFullscreen, setIsImageFullscreen] = useState(false);
@@ -20,12 +18,6 @@ const SettingUpRedux = () => {
     "Configure the Redux store with the slice reducer.",
     "Wrap your application in a Provider component to pass down the store.",
   ];
-
-  const handleContinueClick = () => {
-    if (visiblePoints < bulletPoints.length) {
-      dispatch(revealNextBulletPoint());
-    }
-  };
 
   const toggleImageFullscreen = () => {
     setIsImageFullscreen(!isImageFullscreen);
@@ -41,7 +33,7 @@ const SettingUpRedux = () => {
         {/* Bullet Points on the Left */}
         <div className="flex-1 text-lg md:text-xl text-left leading-relaxed space-y-4">
           <ol className="list-decimal list-inside space-y-4">
-            {bulletPoints.slice(0, visiblePoints).map((point, index) => (
+            {bulletPoints.map((point, index) => (
               <li key={index}>{point}</li>
             ))}
           </ol>
@@ -59,16 +51,6 @@ const SettingUpRedux = () => {
           />
         </div>
       </div>
-
-      {/* Continue Button */}
-      {visiblePoints < bulletPoints.length && (
-        <button
-          onClick={handleContinueClick}
-          className="mt-6 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
-        >
-          Continue
-        </button>
-      )}
     </div>
   );
 };

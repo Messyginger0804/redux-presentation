@@ -1,4 +1,3 @@
-// Slide5.jsx
 import { useSelector, useDispatch } from 'react-redux';
 import { revealNextBulletPoint } from '../redux/presentationSlice.js';
 import { useState } from 'react';
@@ -7,7 +6,9 @@ import img from '../assets/store.png';
 const ReduxStore = () => {
   console.log("Slide5 component rendered - What is a Redux Store?");
   const dispatch = useDispatch();
-  const visiblePoints = useSelector((state) => state.presentation.bulletPointsVisible.slide5);
+
+  // Select the number of visible bullet points for slide5
+  const visiblePoints = useSelector((state) => state.presentation.bulletPointsVisible.slide5 || 1);
 
   // Local state to manage the fullscreen image view
   const [isImageFullscreen, setIsImageFullscreen] = useState(false);

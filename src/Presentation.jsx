@@ -28,23 +28,23 @@ const Presentation = () => {
       case 'intro':
         return <Introduction onStart={() => handleStart(dispatch)} />;
       case 'slide1':
-        return <Slide1 />;
+        return <Slide1 />; // What is Redux?
       case 'slide2':
-        return <Slide2 />;
+        return <Slide2 />; // What is State?
       case 'slide3':
-        return <Slide3 />;
+        return <Slide3 />; // Reasons to Use Redux
       case 'slide4':
-        return <Slide4 />;
+        return <Slide5 />; // Setting Up Redux
       case 'slide5':
-        return <Slide5 />;
+        return <Slide4 />; // What is a Redux Store?
       case 'slide6':
-        return <Slide6 />;
+        return <Slide6 />; // Understanding Reducers
       case 'slide7':
-        return <Slide7 />;
+        return <Slide7 />; // Explaining useSelector
       default:
         return <Introduction onStart={() => handleStart(dispatch)} />;
     }
-  };
+  };  
 
   return (
     <div>

@@ -6,8 +6,15 @@ const initialState = {
   loading: false,
   bulletPointsVisible: {
     slide1: 1,
+    slide2: 1,
+    slide3: 1,
+    slide4: 1,
+    slide5: 1,
+    slide6: 1,
+    slide7: 1,
   },
 };
+
 
 const presentationSlice = createSlice({
   name: 'presentation',

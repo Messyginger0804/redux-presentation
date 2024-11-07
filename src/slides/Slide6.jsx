@@ -1,4 +1,3 @@
-// Slide6.jsx
 import { useSelector, useDispatch } from 'react-redux';
 import { revealNextBulletPoint } from '../redux/presentationSlice.js';
 import { useState } from 'react';
@@ -18,7 +17,7 @@ const Reducers = () => {
     "Listen for specific action types and update parts of the state accordingly",
     "Contain the logic to decide how different actions transform the state",
     "Make state updates predictable, making it easier to debug and test",
-    "Should not perform side effects, such as API calls or modifying variables outside their scope"
+    "Should not perform side effects, such as API calls or modifying variables outside their scope",
   ];
 
   const handleContinueClick = () => {
@@ -32,9 +31,15 @@ const Reducers = () => {
   };
 
   return (
-    <div className={`flex flex-col items-center justify-center h-screen bg-gray-900 text-white px-4 ${isImageFullscreen ? 'overflow-hidden' : ''}`}>
+    <div
+      className={`flex flex-col items-center justify-center h-screen bg-gray-900 text-white px-4 ${
+        isImageFullscreen ? 'overflow-hidden' : 'overflow-auto'
+      }`}
+    >
       {/* Title */}
-      <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">Understanding Reducers</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
+        Understanding Reducers
+      </h1>
 
       {/* Content Container */}
       <div className="flex flex-col md:flex-row items-center md:items-start justify-between max-w-5xl w-full">
@@ -53,13 +58,19 @@ const Reducers = () => {
 
         {/* Image on the Right */}
         <div
-          className={`flex-1 mt-8 md:mt-0 md:ml-8 cursor-pointer ${isImageFullscreen ? 'fixed top-0 left-0 w-full h-full bg-black z-50 flex items-center justify-center' : ''}`}
+          className={`flex-1 mt-8 md:mt-0 md:ml-8 cursor-pointer ${
+            isImageFullscreen
+              ? 'fixed top-0 left-0 w-full h-full bg-black z-50 flex items-center justify-center'
+              : ''
+          }`}
           onClick={toggleImageFullscreen}
         >
           <img
             src={img}
             alt="Image illustrating reducers"
-            className={`w-full h-auto object-contain transition-transform duration-300 ${isImageFullscreen ? 'max-h-full max-w-full' : ''}`}
+            className={`w-full h-auto object-contain transition-transform duration-300 ${
+              isImageFullscreen ? 'max-h-full max-w-full' : ''
+            }`}
           />
         </div>
       </div>
