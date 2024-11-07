@@ -6,9 +6,10 @@ import { nextSlide, previousSlide } from './redux/presentationSlice';
 import Slide1 from './slides/Slide1'; // What is Redux?
 import Slide2 from './slides/Slide2'; // What is State?
 import Slide3 from './slides/Slide3'; // Reasons to Use Redux
-import Slide4 from './slides/Slide4'; // Setting Up Redux
-import Slide5 from './slides/Slide5'; // What is a Redux Store?
+import Slide4 from './slides/Slide4'; // What is a Redux Store?
+import Slide5 from './slides/Slide5'; // Setting Up Redux
 import Slide6 from './slides/Slide6'; // Understanding Reducers
+import Slide7 from './slides/Slide7'; // What is a Redux Store?
 import Introduction from './Intro';
 import LoadingScreen from './LoadingScreen';
 
@@ -38,6 +39,8 @@ const Presentation = () => {
         return <Slide5 />;
       case 'slide6':
         return <Slide6 />;
+      case 'slide7':
+        return <Slide7 />;
       default:
         return <Introduction onStart={() => handleStart(dispatch)} />;
     }
