@@ -8,16 +8,17 @@ const ReduxStore = () => {
   const dispatch = useDispatch();
 
   // Select the number of visible bullet points for slide5
-  const visiblePoints = useSelector((state) => state.presentation.bulletPointsVisible.slide5 || 1);
+  const visiblePoints = useSelector((state) => state.presentation.bulletPointsVisible.slide4);
 
   // Local state to manage the fullscreen image view
   const [isImageFullscreen, setIsImageFullscreen] = useState(false);
 
   const bulletPoints = [
-    "Provides a single source of truth",
-    "Allows components to access state across the app",
-    "Enables predictable updates by enforcing changes through actions and reducers",
+    "🧠 The Brain of Redux – The store acts as the brain of the Redux architecture, keeping everything organized.",
+    "🔁 Follows a One-Way Data Flow – Data flows in a strict cycle: dispatch → reducer → new state.",
+    "🎭 Decouples UI from Data – The UI doesn’t manage state directly; it reads from the store.",
   ];
+  
 
   const handleContinueClick = () => {
     if (visiblePoints < bulletPoints.length) {

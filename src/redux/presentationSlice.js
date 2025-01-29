@@ -2,6 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  slides: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'slide6', 'slide7', 'slide8'],
   currentSlide: null,
   loading: false,
   bulletPointsVisible: {
@@ -12,8 +13,10 @@ const initialState = {
     slide5: 1,
     slide6: 1,
     slide7: 1,
+    slide8: 1,
   },
 };
+
 
 
 const presentationSlice = createSlice({
