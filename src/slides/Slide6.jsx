@@ -32,7 +32,7 @@ const Reducers = () => {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center h-screen bg-gray-900 text-white px-4 ${
+      className={`flex flex-col items-center justify-center h-full bg-gray-900 text-white px-4 ${
         isImageFullscreen ? 'overflow-hidden' : 'overflow-auto'
       }`}
     >
