@@ -9,8 +9,8 @@ import Slide3 from './slides/Slide3'; // Reasons to Use Redux
 import Slide4 from './slides/Slide4'; // Setting Up Redux
 import Slide5 from './slides/Slide5'; // What is a Redux Store?
 import Slide6 from './slides/Slide6'; // Understanding Reducers
-import Slide7 from './slides/Slide7'; // Explaining useSelector
-import Slide8 from './slides/Slide8'; // Understanding useDispatch
+import Slide7 from './slides/Slide8'; // Explaining useSelector
+import Slide8 from './slides/Slide7'; // Understanding useDispatch
 
 import Introduction from './Intro';
 import LoadingScreen from './LoadingScreen';
@@ -65,7 +65,7 @@ const Presentation = () => {
           </button>
           <button
             onClick={handleNextSlide}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg"
+            className={`px-4 py-2 bg-blue-600 text-white rounded-lg ${currentSlide === "intro" ? "hidden" : ""}`}
           >
             Next
           </button>

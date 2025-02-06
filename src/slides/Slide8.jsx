@@ -1,21 +1,22 @@
+// Slide7.jsx
 import { useSelector, useDispatch } from 'react-redux';
 import { revealNextBulletPoint } from '../redux/presentationSlice.js';
 import { useState } from 'react';
-import img from '../assets/store.png'; // Import an appropriate image
+import img from '../assets/useSelector.png'; // Import your image
 
-const UseDispatchExplanation = () => {
-  console.log("Slide8 component rendered - Understanding useDispatch");
+const UseSelectorExplanation = () => {
+  console.log("Slide7 component rendered - Understanding useSelector");
   const dispatch = useDispatch();
-  const visiblePoints = useSelector((state) => state.presentation.bulletPointsVisible.slide8);
+  const visiblePoints = useSelector((state) => state.presentation.bulletPointsVisible.slide7);
 
   // Local state to manage the fullscreen image view
   const [isImageFullscreen, setIsImageFullscreen] = useState(false);
 
   const bulletPoints = [
-    "useDispatch is a hook provided by React-Redux that allows components to send actions to the Redux store.",
-    "It provides access to the store's dispatch function, enabling components to modify global state.",
-    "Actions dispatched using useDispatch are handled by reducers, which update the state accordingly.",
-    "Actions must be plain JavaScript objects, typically created using Redux action creators.",
+    "useSelector is a hook provided by React-Redux to access the Redux store's state.",
+    "It allows components to extract and use specific pieces of state from the store.",
+    "By using useSelector, components can subscribe to changes in the Redux store and re-render when the selected state changes.",
+    "You can access the state from a given piece of state by either dot notation or deconstruction.",
   ];
 
   const handleContinueClick = () => {
@@ -31,7 +32,7 @@ const UseDispatchExplanation = () => {
   return (
     <div className={`flex flex-col items-center justify-center h-screen bg-gray-900 text-white px-4 ${isImageFullscreen ? 'overflow-hidden' : ''}`}>
       {/* Title */}
-      <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">How Do You Modify State in Redux?</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">How Do You Get the State Out of the Store?</h1>
 
       {/* Bullet Points */}
       <div className="flex flex-col md:flex-row items-center md:items-start justify-between max-w-5xl w-full">
@@ -48,7 +49,7 @@ const UseDispatchExplanation = () => {
         >
           <img
             src={img}
-            alt="Image illustrating useDispatch"
+            alt="Image illustrating useSelector"
             className={`mt-8 w-full h-auto object-contain transition-transform duration-300 ${isImageFullscreen ? 'max-h-full max-w-full' : ''}`}
           />
         </div>
@@ -67,4 +68,4 @@ const UseDispatchExplanation = () => {
   );
 };
 
-export default UseDispatchExplanation;
+export default UseSelectorExplanation;
